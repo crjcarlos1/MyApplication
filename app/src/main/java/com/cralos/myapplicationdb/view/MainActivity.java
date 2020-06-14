@@ -61,32 +61,6 @@ public class MainActivity extends AppCompatActivity implements OnClickSearchUser
         viewModel.deleteUser(user, dataBase);
     }
 
-    private void insertProfiles() {
-        Profile[] array = {new Profile("perfil 1"),
-                new Profile("perfil 2"), new Profile("perfil 3"), new Profile("perfil 4"),
-                new Profile("perfil 5"), new Profile("perfil 6"), new Profile("perfil 7"),
-                new Profile("perfil 8"), new Profile("perfil 9"), new Profile("perfil 10"),
-                new Profile("perfil 11"), new Profile("perfil 12"), new Profile("perfil 13"),
-                new Profile("perfil 14"), new Profile("perfil 15"), new Profile("perfil 16"),
-                new Profile("perfil 17"), new Profile("perfil 18"), new Profile("perfil 19"), new Profile("perfil 20"),
-        };
-        dataBase.profileDao().insertProfiles(array);
-    }
-
-    private void insertUsers() {
-        User[] users = {new User(1, "Alicia", "Perez", "Perez"), new User(2, "Carlos", "Contreras", "Ramirez"),
-                new User(3, "Carlos", "Corona", "Gutierrez"), new User(4, "David", "Solis", "Guardado"),
-                new User(5, "Ivan", "Solis", "Guardado"), new User(6, "Oscar", "Cruz", "Ramirez"),
-                new User(7, "Erandy", "Galvan", "Galvan"), new User(8, "Ofelia", "Soto", "Telles"),
-                new User(9, "Fabiola", "Mondragon", "Cruz"), new User(10, "Gabriela", "Soto", "Montemayor"),
-                new User(11, "Graciela", "Ramirez", "Garcia"), new User(12, "Maricela", "Ramirez", "Ramirez"),
-                new User(13, "Maria", "Ramirez", "Salazar"), new User(14, "Jorge", "Contreras", "Garcia"),
-                new User(15, "Juan", "Avellano", "Dominguez"), new User(16, "Jose", "Alcantara", "Lopez"),
-                new User(17, "Luis", "Contreras", "Lopez"), new User(18, "Fernanda", "Contreras", "Lopez"),
-                new User(19, "Karen", "Contreras", "Ramirez"), new User(20, "Nancy", "Contreras", "Morales"),};
-        dataBase.userDao().insertUsers(users);
-    }
-
     private void initActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         binding.setOnClick(this);
@@ -150,6 +124,32 @@ public class MainActivity extends AppCompatActivity implements OnClickSearchUser
         for (User user : s) {
             Log.e(TAG, "name: " + user.getName() + ", apellido: " + user.getApellidoPaterno() + " " + user.getApellidoMaterno());
         }
+    }
+
+    private void insertProfiles() {
+        Profile[] array = {new Profile("perfil 1"),
+                new Profile("perfil 2"), new Profile("perfil 3"), new Profile("perfil 4"),
+                new Profile("perfil 5"), new Profile("perfil 6"), new Profile("perfil 7"),
+                new Profile("perfil 8"), new Profile("perfil 9"), new Profile("perfil 10"),
+                new Profile("perfil 11"), new Profile("perfil 12"), new Profile("perfil 13"),
+                new Profile("perfil 14"), new Profile("perfil 15"), new Profile("perfil 16"),
+                new Profile("perfil 17"), new Profile("perfil 18"), new Profile("perfil 19"), new Profile("perfil 20"),
+        };
+        dataBase.profileDao().insertProfiles(array);
+    }
+
+    private void insertUsers() {
+        User[] users = {new User(1, "Alicia", "Perez", "Perez"), new User(2, "Carlos", "Contreras", "Ramirez"),
+                new User(3, "Carlos", "Corona", "Gutierrez"), new User(4, "David", "Solis", "Guardado"),
+                new User(5, "Ivan", "Solis", "Guardado"), new User(6, "Oscar", "Cruz", "Ramirez"),
+                new User(7, "Erandy", "Galvan", "Galvan"), new User(8, "Ofelia", "Soto", "Telles"),
+                new User(9, "Fabiola", "Mondragon", "Cruz"), new User(10, "Gabriela", "Soto", "Montemayor"),
+                new User(11, "Graciela", "Ramirez", "Garcia"), new User(12, "Maricela", "Ramirez", "Ramirez"),
+                new User(13, "Maria", "Ramirez", "Salazar"), new User(14, "Jorge", "Contreras", "Garcia"),
+                new User(15, "Juan", "Avellano", "Dominguez"), new User(16, "Jose", "Alcantara", "Lopez"),
+                new User(17, "Luis", "Contreras", "Lopez"), new User(18, "Fernanda", "Contreras", "Lopez"),
+                new User(19, "Karen", "Contreras", "Ramirez"), new User(20, "Nancy", "Contreras", "Morales"),};
+        dataBase.userDao().insertUsers(users);
     }
 
 }
